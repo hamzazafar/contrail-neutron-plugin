@@ -75,7 +75,7 @@ class ListenerManager(ResourceManager):
     def make_dict(self, ll, fields=None):
         props = ll.get_loadbalancer_listener_properties()
         res = {'id': ll.uuid,
-               'tenant_id': ll.parent_uuid.replace('-', ''),
+               'tenant_id': ll.parent_uuid,
                'name': ll.display_name,
                'description': self._get_object_description(ll),
                'protocol': props.protocol,

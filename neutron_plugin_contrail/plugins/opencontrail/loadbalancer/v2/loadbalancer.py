@@ -98,7 +98,7 @@ class LoadbalancerManager(ResourceManager):
         props = lb.get_loadbalancer_properties()
         port_id = self._get_interface_params(lb, props)
         res = {'id': lb.uuid,
-               'tenant_id': lb.parent_uuid.replace('-', ''),
+               'tenant_id': lb.parent_uuid,
                'name': lb.display_name,
                'description': self._get_object_description(lb),
                'vip_port_id': port_id,

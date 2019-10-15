@@ -43,7 +43,7 @@ class LoadbalancerHealthmonitorManager(ResourceManager):
     def make_dict(self, healthmonitor, fields=None):
         res = {'id': healthmonitor.uuid,
                'name': healthmonitor.name,
-               'tenant_id': healthmonitor.parent_uuid.replace('-', ''),
+               'tenant_id': healthmonitor.parent_uuid,
                'status': self._get_object_status(healthmonitor)}
 
         props = healthmonitor.get_loadbalancer_healthmonitor_properties()

@@ -70,7 +70,7 @@ class LoadbalancerPoolManager(ResourceManager):
     def make_dict(self, pool, fields=None):
         res = {
             'id': pool.uuid,
-            'tenant_id': pool.parent_uuid.replace('-', ''),
+            'tenant_id': pool.parent_uuid,
             'name': pool.display_name,
             'description': self._get_object_description(pool),
             'status': self._get_object_status(pool),

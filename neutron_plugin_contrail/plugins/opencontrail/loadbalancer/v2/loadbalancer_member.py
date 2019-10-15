@@ -54,7 +54,7 @@ class LoadbalancerMemberManager(ResourceManager):
 
         try:
             pool = self._api.loadbalancer_pool_read(id=member.parent_uuid)
-            res['tenant_id'] = pool.parent_uuid.replace('-', '')
+            res['tenant_id'] = pool.parent_uuid
         except NoIdError:
             pass
 
